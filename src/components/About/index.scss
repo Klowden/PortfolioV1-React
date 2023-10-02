@@ -1,0 +1,103 @@
+.container {
+    position: relative;
+}
+
+.text-zone {
+    p {
+        font-size: 1.1rem;
+        line-height: 1.8rem;
+        text-indent: 1rem;
+        padding-bottom: 1rem;
+    }
+}
+
+
+.stage-cube-cont {
+    width: 50%;
+    height: 100%;
+    top:0;
+    padding-top: 18%;
+    margin-left: 0;
+    position: absolute;
+    right: 0;
+    overflow: hidden;
+}
+
+.cubespinner{
+    animation: spincube;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 12s;
+    transform-style: preserve-3d;
+    transform-origin: 6.25rem 6.25rem 0;
+    margin-left: calc(50% - 6.25rem);
+
+    div{
+        position: absolute;
+        width:12.5rem;
+        height:12.5rem;
+        border: 1px solid #ccc;
+        background: rgba(255,255,255,0.4);
+        text-align: center;
+        font-size: 6.25rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 1.25rem 0px lightyellow;
+    }
+
+    .face1 {
+        transform: translateZ(6.25rem);
+    }
+    .face2 {
+        transform: rotateY(90deg) translateZ(6.25rem);
+    }
+    .face3 {
+        transform: rotateY(90deg) rotateX(90deg) translateZ(6.25rem);
+    }
+    .face4 {
+        transform: rotateY(180deg) rotateZ(90deg) translateZ(6.25rem);
+    }
+    .face5 {
+        transform: rotateY(-90deg) rotateZ(90deg) translateZ(6.25rem);
+    }
+    .face6 {
+        transform: rotateX(-90deg) translateZ(6.25rem);
+    }
+}
+
+@keyframes spincube {
+    from,
+    to {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    16% {
+        transform: rotateY(-90deg) rotateZ(90deg);
+    }
+    33% {
+        transform: rotateY(-90deg) ;
+    }
+    50% {
+        transform: rotateY(-180deg) rotateZ(90deg);
+    }
+    66% {
+        transform: rotateY(-270deg) rotateX(90deg);
+    }
+    83% {
+        transform: rotateX(90deg);
+    }
+
+}
+
+
+
+@media screen and (max-width:1200px) {
+    .stage-cube-cont {
+        position: initial;
+        max-width: 100vw;
+        width:auto;
+        height: 100vh;
+        min-height: fit-content;
+        overflow: visible;
+    }
+}

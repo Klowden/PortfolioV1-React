@@ -1,0 +1,20 @@
+.logo-container {
+    z-index: -1;
+    width: 25rem;
+    height: 38.0625rem;
+    position: absolute;
+    top: 0;
+    right: 8%;
+    bottom: 0;
+    left: auto;
+    margin: auto;
+  
+    svg {
+      position:absolute;
+      width: 100%;
+      height: auto;
+      bottom: 0;
+      transform: rotateY(340deg) rotateZ(30deg) !important;
+    }
+  }
+  

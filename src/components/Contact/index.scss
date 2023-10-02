@@ -1,0 +1,133 @@
+.contact-form {
+    width: 100%;
+    margin-top: 1.25rem;
+
+    ul {
+        padding: 0;
+        margin: 0;
+
+        li{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            margin-bottom: .625rem;
+            overflow: hidden;
+            display: block;
+            position: relative;
+            opacity: 0;
+            animation: fadeInUp 1s 2s forwards;
+            clear: both;
+        }
+
+        li.half {
+            width: 49%;
+            margin-left: 2%;
+            float: left;
+            clear: none;
+
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+
+    input[type='text'],
+    input[type='email'] {
+        width: 100%;
+        border: 0;
+        background: #115173;
+        height: 3.125rem;
+        font-size: 1rem;
+        color: #fff;
+        padding: 0 1.25rem;
+        box-sizing: border-box;
+    }
+
+    textarea {
+        width: 100%;
+        border: 0;
+        background: #115173;
+        height: 3.125rem;
+        font-size: 1rem;
+        color:#fff;
+        padding: 1.25rem;
+        min-height: 9.3rem;
+        box-sizing: border-box;
+    }
+
+    .flat-button {
+        color: #ffd700;
+        background: 0 0;
+        font-size: .9rem;
+        letter-spacing: .18rem;
+        text-decoration: none;
+        padding: .5rem .625rem;
+        border: 1px solid #ffd700;
+        float:right;
+        border-radius: .25rem;
+    }
+}
+
+.info-map {
+    position: absolute;
+    background-color: black;
+    top: 30%;
+    right: 30%;
+    z-index: 999999;
+    width: 16.7rem;
+    padding: 1.25rem;
+    color:#fff;
+    font-family: 'Helvetica';
+    font-size: 1.05rem;
+    font-weight: 300;
+    opacity: 0;
+    animation: fadeIn 1s 1.5s forwards;
+
+    span{
+        font-size: 1rem;
+        display: block;
+        padding-top: 1.25rem;
+        color:#ffd700;
+    }
+}
+
+.map-wrap {
+    background: rgba(8,253,216,0.1);
+    float: right;
+    width: 53%;
+    height: 100%;
+}
+
+.leaflet-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    opacity: 0;
+    animation: backInRight 1s 1.2s forwards;
+}
+
+@media screen and (max-width: 1200px) {
+    
+    h1 {
+        font-size: min(3.25rem, calc(100vw / 7)) !important;
+        line-height: min(3.25rem, calc(100vw / 15)) !important;
+        white-space: nowrap;
+        margin: 1rem 0 2rem 0 !important
+    }
+    
+    .map-wrap {
+        float: none;
+        width: 100vw;
+        height: 25rem;
+        margin: 0;
+    }
+
+    .info-map {
+        top: auto;
+        bottom: 0;
+        left: 0;
+        padding: .5rem 1rem;
+        line-height: 1.2rem;
+        width: fit-content;
+    }
+}
