@@ -4,11 +4,11 @@ import { useEffect, useState } from 'react'
 import Loader from 'react-loaders'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
-  faAngular,
   faCss3,
   faGitAlt,
   faHtml5,
   faJsSquare,
+  faPython,
   faReact,
 } from '@fortawesome/free-brands-svg-icons'
 const About = () => {
@@ -58,7 +58,7 @@ const About = () => {
         <div className="stage-cube-cont">
           <div className="cubespinner">
             <div className="face1">
-              <FontAwesomeIcon icon={faAngular} color="#DD0031" />
+              <FontAwesomeIcon icon={faPython} color="#3873a3" />
             </div>
             <div className="face2">
               <FontAwesomeIcon icon={faHtml5} color="#f06529" />

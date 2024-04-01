@@ -1,7 +1,7 @@
 body {
   margin: 0;
-  font: 300 .65rem/1.4 'Helvetica Neue', 'sans-serif';
-  color:#444;
+  font: 300 0.65rem/1.4 'Helvetica Neue', 'sans-serif';
+  color: #444;
   background: #022c43;
   overflow: hidden;
   display: block;
@@ -12,7 +12,6 @@ body {
 .dashboard {
   margin-top: 12.5rem;
   margin-left: 12.5rem;
-  
 }
 
 @media screen and (max-width: 1200px) {

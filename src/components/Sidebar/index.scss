@@ -1,202 +1,209 @@
-.nav-bar { //sidebar styling - Nest start
-    background: #181818;
-    width: 3.9rem;
-    height: 100%;
+.nav-bar {
+  /* //sidebar styling - Nest start */
+  background: #181818;
+  width: 3.9rem;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 3;
+  min-height: 31.125rem;
+
+  .logo {
+    /* //Logo Style */
+    display: block;
+    padding: 0.5rem 0;
+
+    img {
+      display: block;
+      margin: 0.5rem auto;
+      width: 1.5rem;
+      height: auto;
+
+      &.sub-logo {
+        /* //Logo Wording */
+        width: 3.125rem;
+      }
+    }
+  }
+
+  nav {
+    display: block;
+    text-align: center;
     position: absolute;
-    top: 0;
-    z-index: 3;
-    min-height: 31.125rem;
+    height: 13.125rem;
+    top: 50%;
+    margin-top: -7.5rem;
+    width: 100%;
 
-    .logo { //Logo Style
-        display: block;
-        padding: 0.5rem 0;
+    a {
+      /* //Style Icon Links */
+      font-size: 1.6rem;
+      color: #4d4d4e;
+      display: block;
+      line-height: 4rem;
+      height: 4rem;
+      position: relative;
+      text-decoration: none;
 
-        img{
-            display: block;
-            margin: 0.5rem auto;
-            width: 1.5rem;
-            height: auto;
+      svg {
+        /* //Style SVG HTML to include Transitions */
+        transition: all 0.3s ease-out;
+      }
 
-            &.sub-logo {//Logo Wording
-                width: 3.125rem;
-            }
+      /* //Change color on hover, svg img transparent on hover and back after */
+      &:hover {
+        color: #ffd700;
+
+        svg {
+          opacity: 0;
         }
+
+        &:after {
+          opacity: 1;
+        }
+      }
+
+      /* //What happens after hover - Shows transition to word content */
+      &:after {
+        content: '';
+        font-size: 0.5625rem;
+        letter-spacing: 2px;
+        position: absolute;
+        bottom: 0;
+        display: block;
+        width: 100%;
+        text-align: center;
+        opacity: 0;
+        transition: all 0.3s ease-out;
+      }
+
+      /* //BEGIN SIDEBAR ICON CONTENT CHANGE */
+      &:first-child {
+        /* //Home - Specified by 1st child due to no className */
+        &::after {
+          content: 'HOME';
+        }
+      }
+
+      &:nth-child(2) {
+        /* //About - Also a.about-link{} */
+        &::after {
+          content: 'ABOUT';
+        }
+      }
+
+      &.portfolio-link {
+        /* //Portfolio ~~ only used  nth child for demo */
+        &::after {
+          content: 'MY WORK';
+        }
+      }
+
+      &.contact-link {
+        /* //Contact - Also a.contact-link{} */
+        &::after {
+          content: 'CONTACT';
+        }
+      }
+
+      &.active {
+        /* //Color the Active page Icon - also a.active{} */
+        svg {
+          color: #ffd700;
+        }
+      }
+    }
+  }
+
+  ul {
+    position: absolute;
+    bottom: 1.25rem;
+    width: 100%;
+    display: block;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    margin: 0;
+
+    li {
+      a {
+        padding: 0.4375rem 0;
+        display: block;
+        font-size: 2.4rem;
+        line-height: 2.5rem;
+        color: #4d4d4e;
+
+        &:hover svg {
+          color: #ffd700;
+        }
+      }
+    }
+  }
+  .hamburger-icon,
+  .close-icon {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .nav-bar {
+    background: black;
+    position: initial;
+    min-height: auto;
+    width: 100vw;
+
+    ul,
+    nav {
+      display: none;
+    }
+
+    .logo {
+      display: inline-flex;
+      padding-left: 0.5rem;
+
+      .sub-logo {
+        padding-left: 0.5rem;
+      }
     }
 
     nav {
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: #181818;
+      height: auto;
+      margin: 0;
+      z-index: 2;
+      position: fixed;
+
+      &.mobile-show {
         display: block;
-        text-align: center;
-        position: absolute;
-        height: 13.125rem;
-        top: 50%;
-        margin-top: -7.5rem;
-        width: 100%;
+      }
 
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
 
-        a{//Style Icon Links
-            font-size: 1.6rem;
-            color: #4d4d4e;
-            display: block;
-            line-height: 4rem;
-            height: 4rem;
-            position: relative;
-            text-decoration: none;
+      a:after {
+        opacity: 1;
+        position: initial;
+        width: auto;
+        margin-left: 0.625rem;
+      }
 
-            svg {//Style SVG HTML to include Transitions
-                transition: all 0.3s ease-out;
-            }
-
-            //Change color on hover, svg img transparent on hover and back after
-            &:hover {
-                color: #ffd700;
-
-                svg{
-                    opacity: 0;
-                }
-
-                &:after{
-                    opacity: 1;
-                }
-            }
-
-            //What happens after hover - Shows transition to word content
-            &:after{
-                content: '';
-                font-size: 0.5625rem;
-                letter-spacing: 2px;
-                position: absolute;
-                bottom: 0;
-                display: block;
-                width: 100%;
-                text-align: center;
-                opacity: 0;
-                transition: all 0.3s ease-out;
-            }
-
-            //BEGIN SIDEBAR ICON CONTENT CHANGE
-            &:first-child{//Home - Specified by 1st child due to no className
-                &::after{
-                    content: 'HOME';
-                }
-            }
-
-            &:nth-child(2){ //About - Also a.about-link{}
-                &::after{
-                    content: 'ABOUT';
-                }
-            }
-
-            &.portfolio-link{ //Portfolio ~~ only used  nth child for demo
-                &::after{
-                    content: 'MY WORK';
-                }
-            }
-
-            &.contact-link{ //Contact - Also a.contact-link{}
-                &::after{
-                    content: 'CONTACT';
-                }
-            }
-
-
-            &.active{//Color the Active page Icon - also a.active{}
-                svg{
-                    color: #ffd700;
-                }
-            }
-        }
+      a svg {
+        opacity: 1 !important;
+      }
     }
 
-    ul {
-        position: absolute;
-        bottom: 1.25rem;
-        width: 100%;
-        display: block;
-        padding: 0;
-        list-style: none;
-        text-align: center;
-        margin: 0;
-
-        li {
-            a{
-                padding: 0.4375rem 0;
-                display: block;
-                font-size: 2.4rem;
-                line-height: 2.5rem;
-                color:#4d4d4e;
-
-                &:hover svg{
-                    color: #ffd700;
-                }
-            }
-        }
-    }
-    .hamburger-icon, .close-icon {
-        display: none;
-    }
-}
-
-
-
-@media screen and (max-width: 1200px) {
-    .nav-bar { 
-      background: black;
-      position: initial;
-      min-height: auto;
-      width: 100vw;
-  
-       ul, nav {
-        display: none;
-       }
-  
-       .logo {
-        display: inline-flex;
-        padding-left: 0.5rem;
-
-        .sub-logo {
-            padding-left: 0.5rem;
-        }
-       }
-
-       nav {
-        width: 100%;
-        top: 0;
-        left: 0;
-        background: #181818;
-        height: auto;
-        margin: 0;
-        z-index: 2;
-        position: fixed;
-  
-        &.mobile-show {
-          display: block;
-        }
-  
-
-        a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-  
-        a:after {
-          opacity: 1;
-          position: initial;
-          width: auto;
-          margin-left: .625rem;
-        }
-  
-        a svg {
-          opacity: 1 !important;
-        }
-       }
-  
-       .hamburger-icon,
-       .close-icon {
-          position: absolute;
-          top: 15px;
-          right: 15px;
-          display: block;
-       }
+    .hamburger-icon,
+    .close-icon {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      display: block;
     }
   }
+}
